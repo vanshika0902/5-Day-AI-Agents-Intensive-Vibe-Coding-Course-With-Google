@@ -2,6 +2,6 @@
 Contains code, material relevant to AI Agents
 
 
-** Day 3 **
+# Day 3
 
 Agent Skills
