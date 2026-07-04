@@ -59,7 +59,7 @@ Canary / Shadow Mode
 
 your SKILL.md description, the
 only thing the model sees during routing, must pass four checks:
-• Testable specificity: You must write 3 positive and 3 negative triggers.
-• Clarity: Ambiguous queries don't overlap with adjacent skills.
-• Execution fidelity: It describes actual performance, not aspirational behavior.
-• Rephrasing stability: It routes consistently regardless of how the user phrases the intent.
+- Testable specificity: You must write 3 positive and 3 negative triggers.
+- Clarity: Ambiguous queries don't overlap with adjacent skills.
+- Execution fidelity: It describes actual performance, not aspirational behavior.
+- Rephrasing stability: It routes consistently regardless of how the user phrases the intent.
