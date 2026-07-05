@@ -90,10 +90,7 @@ Format to follow
 
 ---
 name: skill-name
-description: |
- [What it does in one verb-led sentence.] Use this skill when the user
- [trigger phrase 1], [trigger phrase 2], or [trigger phrase 3].
- Do NOT use for [anti-trigger 1] or [anti-trigger 2].
+description: | [What it does in one verb-led sentence.] Use this skill when the user [trigger phrase 1], [trigger phrase 2], or [trigger phrase 3].Do NOT use for [anti-trigger 1] or [anti-trigger 2].
 version: 1.0.0
 license: MIT
 allowed-tools: [Optional] Read Bash Write
