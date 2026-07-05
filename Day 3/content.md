@@ -81,7 +81,6 @@ dependency, with the same supply-chain hygiene.
 
 Format to follow
 
-
 ---
 name: skill-name
 description: | [What it does in one verb-led sentence.] Use this skill when the user [trigger phrase 1], [trigger phrase 2], or [trigger phrase 3].Do NOT use for [anti-trigger 1] or [anti-trigger 2].
@@ -89,9 +88,10 @@ version: 1.0.0
 license: MIT
 allowed-tools: [Optional] Read Bash Write
 metadata:
- author: [Optional] your-handle
+author: [Optional] your-handle
 ---
-# Skill Name
+
+Skill Name
 ## When to use
 - [Concrete scenario]
 - [Concrete scenario]
