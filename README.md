@@ -62,9 +62,68 @@ dversarial /Red-Team
 Canary / Shadow Mode
 
 
-your SKILL.md description, the
-only thing the model sees during routing, must pass four checks:
+your SKILL.md **description**, the only thing the model sees during routing, must pass four checks:
 - Testable specificity: You must write 3 positive and 3 negative triggers.
 - Clarity: Ambiguous queries don't overlap with adjacent skills.
 - Execution fidelity: It describes actual performance, not aspirational behavior.
 - Rephrasing stability: It routes consistently regardless of how the user phrases the intent.
+
+
+Token budget: isolation is a trap
+- Never evaluate a skill purely in isolation. Agents in production co-load 5 to 15 skills simultaneously.
+- A skill body exceeding 5,000 tokens might work perfectly alone,
+- but it will cause context rot when co-loaded
+
+# How to decide among hundereds of skills that exist
+
+- First, prefer first-party skills for vendor-specific tools. Google's BigQuery skill, the official
+Stripe skill, anything written by the people who built the underlying system. They will be
+more correct and more maintained than community alternatives.
+- Second, pin everything you depend on. Community skills evolve, and an unpinned
+dependency that worked yesterday can fail tomorrow.
+- Third, audit before adopting. A skill is code that runs in your context. Treat it like any other
+dependency, with the same supply-chain hygiene.
+
+
+Format to follow
+
+
+---
+name: skill-name
+description: |
+ [What it does in one verb-led sentence.] Use this skill when the user
+ [trigger phrase 1], [trigger phrase 2], or [trigger phrase 3].
+ Do NOT use for [anti-trigger 1] or [anti-trigger 2].
+version: 1.0.0
+license: MIT
+allowed-tools: [Optional] Read Bash Write
+metadata:
+ author: [Optional] your-handle
+---
+# Skill Name
+## When to use
+- [Concrete scenario]
+- [Concrete scenario]
+## When NOT to use
+- [Out-of-scope scenario]
+## Workflow
+1. [Step]
+2. [Step]
+3. See `references/advanced.md` for [edge case].
+
+## Examples
+- Input: "..." → Output: "..."
+## Output format
+- Use `assets/template.md` etc.
+## Anti-patterns to avoid
+- Don't [...]
+
+
+Folder Structure
+
+skill_name/
+├── SKILL.md # Required: YAML frontmatter + markdown instructions
+├── scripts/ # Optional: executable helper scripts (Python, Bash)
+├── references/ # Optional: supplementary context loaded as needed
+├── assets/ # Optional: files used in output (templates,resources)
+├── ... # Any additional files or directories
